@@ -1,0 +1,6 @@
+In order that the replace_cobj.bat file will be executed before the linking process starts, the AddIn
+'VB6 IDE Linker AddIn' (http://www.vbforums.com/showthread.php?866321-VB6-IDE-Linker-AddIn) must be registered.
+Only then the LinkBefore entry of the 'VBCompiler' section in the .vbp file will be recognized.
+
+[VBCompiler]
+LinkBefore=replace_cobj.bat

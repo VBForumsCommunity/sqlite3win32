@@ -1,4 +1,4 @@
-The initial concept and core of this was developed by 'wqweto'. (https://github.com/VBForumsCommunity/vbsqlite)
+The initial concept and core of this was developed by 'wqweto'. (https://github.com/wqweto/vbsqlite)
 
 The fork of this has the following differences:
 - Updated sqlite3 c source from 3011001 (2016-03-03) to 3024000 (2018-06-04).

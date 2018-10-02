@@ -1,6 +1,6 @@
 Type=Exe
 Form=MainForm.frm
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\Windows\system32\stdole2.tlb#OLE Automation
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\WINDOWS\system32\STDOLE2.TLB#OLE Automation
 Module=Common; Common.bas
 Module=Startup; Startup.bas
 Module=sqlite3win32stubs; sqlite3win32stubs.bas

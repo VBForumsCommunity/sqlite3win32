@@ -45,9 +45,25 @@ End If
 End Function
 
 Public Function CDateToJulianDay(ByVal DateValue As Date) As Double
-CDateToJulianDay = CDbl(DateValue) + JULIANDAY_OFFSET
+If CDbl(DateValue) >= 0 Then
+    CDateToJulianDay = CDbl(DateValue) + JULIANDAY_OFFSET
+Else
+    Dim Temp As Double
+    Temp = -Int(-CDbl(DateValue))
+    CDateToJulianDay = Temp - (CDbl(DateValue) - Temp) + JULIANDAY_OFFSET
+End If
 End Function
 
 Public Function CJulianDayToDate(ByVal JulianDay As Double) As Date
-CJulianDayToDate = CDate(JulianDay - JULIANDAY_OFFSET)
+Const MIN_DATE As Double = -657434# + JULIANDAY_OFFSET ' 01/01/0100
+Const MAX_DATE As Double = 2958465# + JULIANDAY_OFFSET ' 12/31/9999
+If JulianDay < MIN_DATE Or JulianDay > MAX_DATE Then Exit Function
+If JulianDay >= JULIANDAY_OFFSET Then
+    CJulianDayToDate = CDate(JulianDay - JULIANDAY_OFFSET)
+Else
+    Dim DateDbl As Double, Temp As Double
+    DateDbl = JulianDay - JULIANDAY_OFFSET
+    Temp = Int(DateDbl)
+    CJulianDayToDate = CDate(Temp + (Temp - DateDbl))
+End If
 End Function

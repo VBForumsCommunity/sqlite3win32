@@ -42,6 +42,8 @@ EXPORTS
     sqlite3_column_bytes16=_sqlite3_column_bytes16@8
     sqlite3_column_bytes=_sqlite3_column_bytes@8
     sqlite3_column_count=_sqlite3_column_count@4
+    sqlite3_column_database_name16=_sqlite3_column_database_name16@8
+    sqlite3_column_database_name=_sqlite3_column_database_name@8
     sqlite3_column_decltype16=_sqlite3_column_decltype16@8
     sqlite3_column_decltype=_sqlite3_column_decltype@8
     sqlite3_column_double=_sqlite3_column_double@8
@@ -49,6 +51,10 @@ EXPORTS
     sqlite3_column_int=_sqlite3_column_int@8
     sqlite3_column_name16=_sqlite3_column_name16@8
     sqlite3_column_name=_sqlite3_column_name@8
+    sqlite3_column_origin_name16=_sqlite3_column_origin_name16@8
+    sqlite3_column_origin_name=_sqlite3_column_origin_name@8
+    sqlite3_column_table_name16=_sqlite3_column_table_name16@8
+    sqlite3_column_table_name=_sqlite3_column_table_name@8
     sqlite3_column_text16=_sqlite3_column_text16@8
     sqlite3_column_text=_sqlite3_column_text@8
     sqlite3_column_type=_sqlite3_column_type@8

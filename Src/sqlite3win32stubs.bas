@@ -43,6 +43,8 @@ Private Declare Function sqlite3_column_blob Lib "sqlite3win32.dll" (ByVal hStmt
 Private Declare Function sqlite3_column_bytes Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal i As Long) As Long
 Private Declare Function sqlite3_column_bytes16 Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal i As Long) As Long
 Private Declare Function sqlite3_column_count Lib "sqlite3win32.dll" (ByVal hStmt As Long) As Long
+Private Declare Function sqlite3_column_database_name Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
+Private Declare Function sqlite3_column_database_name16 Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
 Private Declare Function sqlite3_column_decltype Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
 Private Declare Function sqlite3_column_decltype16 Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
 Private Declare Function sqlite3_column_double Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Double
@@ -50,6 +52,10 @@ Private Declare Function sqlite3_column_int Lib "sqlite3win32.dll" (ByVal hStmt 
 Private Declare Function sqlite3_column_int64 Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Currency
 Private Declare Function sqlite3_column_name Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
 Private Declare Function sqlite3_column_name16 Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
+Private Declare Function sqlite3_column_origin_name Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
+Private Declare Function sqlite3_column_origin_name16 Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
+Private Declare Function sqlite3_column_table_name Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
+Private Declare Function sqlite3_column_table_name16 Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
 Private Declare Function sqlite3_column_text Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
 Private Declare Function sqlite3_column_text16 Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
 Private Declare Function sqlite3_column_type Lib "sqlite3win32.dll" (ByVal hStmt As Long, ByVal iCol As Long) As Long
@@ -414,6 +420,14 @@ Public Function stub_sqlite3_column_count(ByVal hStmt As Long) As Long
 stub_sqlite3_column_count = sqlite3_column_count(hStmt)
 End Function
 
+Public Function stub_sqlite3_column_database_name(ByVal hStmt As Long, ByVal iCol As Long) As Long
+stub_sqlite3_column_database_name = sqlite3_column_database_name(hStmt, iCol)
+End Function
+
+Public Function stub_sqlite3_column_database_name16(ByVal hStmt As Long, ByVal iCol As Long) As Long
+stub_sqlite3_column_database_name16 = sqlite3_column_database_name16(hStmt, iCol)
+End Function
+
 Public Function stub_sqlite3_column_decltype(ByVal hStmt As Long, ByVal iCol As Long) As Long
 stub_sqlite3_column_decltype = sqlite3_column_decltype(hStmt, iCol)
 End Function
@@ -440,6 +454,22 @@ End Function
 
 Public Function stub_sqlite3_column_name16(ByVal hStmt As Long, ByVal iCol As Long) As Long
 stub_sqlite3_column_name16 = sqlite3_column_name16(hStmt, iCol)
+End Function
+
+Public Function stub_sqlite3_column_origin_name(ByVal hStmt As Long, ByVal iCol As Long) As Long
+stub_sqlite3_column_origin_name = sqlite3_column_origin_name(hStmt, iCol)
+End Function
+
+Public Function stub_sqlite3_column_origin_name16(ByVal hStmt As Long, ByVal iCol As Long) As Long
+stub_sqlite3_column_origin_name16 = sqlite3_column_origin_name16(hStmt, iCol)
+End Function
+
+Public Function stub_sqlite3_column_table_name(ByVal hStmt As Long, ByVal iCol As Long) As Long
+stub_sqlite3_column_table_name = sqlite3_column_table_name(hStmt, iCol)
+End Function
+
+Public Function stub_sqlite3_column_table_name16(ByVal hStmt As Long, ByVal iCol As Long) As Long
+stub_sqlite3_column_table_name16 = sqlite3_column_table_name16(hStmt, iCol)
 End Function
 
 Public Function stub_sqlite3_column_text(ByVal hStmt As Long, ByVal iCol As Long) As Long

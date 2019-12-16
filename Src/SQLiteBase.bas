@@ -1,5 +1,6 @@
 Attribute VB_Name = "SQLiteBase"
 Option Explicit
+Public Declare Function SQLitePtrToShadowObj Lib "msvbvm60.dll" Alias "__vbaObjSetAddref" (ByRef Destination As Any, ByVal lpObject As Long) As Long
 Private Declare Sub CopyMemory Lib "kernel32" Alias "RtlMoveMemory" (ByRef Destination As Any, ByRef Source As Any, ByVal Length As Long)
 Private Declare Function lstrlen Lib "kernel32" Alias "lstrlenW" (ByVal lpString As Long) As Long
 Private Declare Function lstrlenA Lib "kernel32" (ByVal lpString As Long) As Long
@@ -21,25 +22,37 @@ SQLiteRefCount = SQLiteRefCount - 1
 If SQLiteRefCount = 0 Then stub_sqlite3_shutdown
 End Sub
 
-Public Function SQLiteUTF8PtrToStr(ByVal Ptr As Long) As String
+Public Function SQLiteBlobToByteArray(ByVal Ptr As Long, ByVal Size As Long) As Variant
+If Ptr <> 0 And Size > 0 Then
+    Dim B() As Byte
+    ReDim B(0 To (Size - 1)) As Byte
+    CopyMemory B(0), ByVal Ptr, Size
+    SQLiteBlobToByteArray = B()
+Else
+    SQLiteBlobToByteArray = Null
+End If
+End Function
+
+Public Function SQLiteUTF8PtrToStr(ByVal Ptr As Long, Optional ByVal Size As Long = -1) As String
 If Ptr <> 0 Then
-    Dim Size As Long, Length As Long
-    Size = lstrlenA(Ptr)
-    Length = MultiByteToWideChar(CP_UTF8, 0, Ptr, Size, 0, 0)
-    If Length > 0 Then
-        SQLiteUTF8PtrToStr = Space$(Length)
-        MultiByteToWideChar CP_UTF8, 0, Ptr, Size, StrPtr(SQLiteUTF8PtrToStr), Length
+    If Size = -1 Then Size = lstrlenA(Ptr)
+    If Size > 0 Then
+        Dim Length As Long
+        Length = MultiByteToWideChar(CP_UTF8, 0, Ptr, Size, 0, 0)
+        If Length > 0 Then
+            SQLiteUTF8PtrToStr = Space$(Length)
+            MultiByteToWideChar CP_UTF8, 0, Ptr, Size, StrPtr(SQLiteUTF8PtrToStr), Length
+        End If
     End If
 End If
 End Function
 
-Public Function SQLiteUTF16PtrToStr(ByVal Ptr As Long) As String
+Public Function SQLiteUTF16PtrToStr(ByVal Ptr As Long, Optional ByVal Size As Long = -1) As String
 If Ptr <> 0 Then
-    Dim Length As Long
-    Length = lstrlen(Ptr)
-    If Length > 0 Then
-        SQLiteUTF16PtrToStr = Space$(Length)
-        CopyMemory ByVal StrPtr(SQLiteUTF16PtrToStr), ByVal Ptr, Length * 2
+    If Size = -1 Then Size = lstrlen(Ptr)
+    If Size > 0 Then
+        SQLiteUTF16PtrToStr = Space$(Size)
+        CopyMemory ByVal StrPtr(SQLiteUTF16PtrToStr), ByVal Ptr, Size * 2
     End If
 End If
 End Function

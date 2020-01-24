@@ -1,4 +1,5 @@
 The initial concept and core of this was developed by 'wqweto'. (https://github.com/wqweto/vbsqlite)
+
 Out of this a COM-Wrapper (VBSQLite10) was created. (https://github.com/Kr00l/VBSQLite)
 
 The fork of this has the following differences:

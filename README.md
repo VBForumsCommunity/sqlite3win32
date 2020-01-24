@@ -1,6 +1,6 @@
 The initial concept and core of this was developed by 'wqweto'. (https://github.com/wqweto/vbsqlite)
 
-Out of this a COM-Wrapper (VBSQLite10) was created. (https://github.com/Kr00l/VBSQLite)
+Out of this a Ax-DLL COM-Wrapper (VBSQLite10) was created. (https://github.com/Kr00l/VBSQLite)
 
 The fork of this has the following differences:
 - Updated sqlite3 c source from 3011001 (2016-03-03) to 3024000 (2018-06-04).

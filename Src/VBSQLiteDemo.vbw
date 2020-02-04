@@ -1,6 +1,0 @@
-MainForm = 313, 274, 1281, 936, C, 105, 44, 881, 717, C
-Common = 113, 119, 1290, 667, C
-Startup = 28, 272, 1270, 945, C
-sqlite3win32stubs = 66, 87, 922, 617, C
-sqlite3win32helper = 61, 187, 1045, 839, C
-SQLiteBase = 54, 24, 983, 689, C

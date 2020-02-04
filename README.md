@@ -8,4 +8,4 @@ The fork of this has the following differences:
 - Renamings in the c++ sources.
 
 What is the same:
-- __stdcall convention applied in each exported function and callback routines so that it can be easily used by VB6.
+- __stdcall convention applied in each exported function and callback routines so that it can be easily used by VB6/VBA.

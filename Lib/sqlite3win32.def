@@ -1,6 +1,5 @@
 EXPORTS
     sqlite3_aggregate_context=_sqlite3_aggregate_context@8
-    sqlite3_aggregate_count=_sqlite3_aggregate_count@4
     sqlite3_auto_extension=_sqlite3_auto_extension@4
     sqlite3_backup_finish=_sqlite3_backup_finish@4
     sqlite3_backup_init=_sqlite3_backup_init@16
@@ -93,7 +92,6 @@ EXPORTS
     sqlite3_errstr=_sqlite3_errstr@4
     sqlite3_exec=_sqlite3_exec@20
     sqlite3_expanded_sql=_sqlite3_expanded_sql@4
-    sqlite3_expired=_sqlite3_expired@4
     sqlite3_extended_errcode=_sqlite3_extended_errcode@4
     sqlite3_extended_result_codes=_sqlite3_extended_result_codes@8
     sqlite3_file_control=_sqlite3_file_control@16
@@ -106,7 +104,6 @@ EXPORTS
     sqlite3_get_autocommit=_sqlite3_get_autocommit@4
     sqlite3_get_auxdata=_sqlite3_get_auxdata@8
     sqlite3_get_table=_sqlite3_get_table@24
-    sqlite3_global_recover=_sqlite3_global_recover@0
     sqlite3_hard_heap_limit64=_sqlite3_hard_heap_limit64@8
     sqlite3_initialize=_sqlite3_initialize@0
     sqlite3_interrupt=_sqlite3_interrupt@4
@@ -120,7 +117,6 @@ EXPORTS
     sqlite3_load_extension=_sqlite3_load_extension@16
     sqlite3_malloc64=_sqlite3_malloc64@8
     sqlite3_malloc=_sqlite3_malloc@4
-    sqlite3_memory_alarm=_sqlite3_memory_alarm@16
     sqlite3_memory_highwater=_sqlite3_memory_highwater@4
     sqlite3_memory_used=_sqlite3_memory_used@0
     sqlite3_msize=_sqlite3_msize@4
@@ -143,7 +139,6 @@ EXPORTS
     sqlite3_prepare16=_sqlite3_prepare16@20
     sqlite3_prepare16_v2=_sqlite3_prepare16_v2@20
     sqlite3_prepare16_v3=_sqlite3_prepare16_v3@24
-    sqlite3_profile=_sqlite3_profile@12
     sqlite3_progress_handler=_sqlite3_progress_handler@16
     sqlite3_randomness=_sqlite3_randomness@8
     sqlite3_realloc64=_sqlite3_realloc64@12
@@ -208,12 +203,9 @@ EXPORTS
     sqlite3_strnicmp=_sqlite3_strnicmp@12
     sqlite3_system_errno=_sqlite3_system_errno@4
     sqlite3_table_column_metadata=_sqlite3_table_column_metadata@36
-    sqlite3_thread_cleanup=_sqlite3_thread_cleanup@0
     sqlite3_threadsafe=_sqlite3_threadsafe@0
     sqlite3_total_changes=_sqlite3_total_changes@4
-    sqlite3_trace=_sqlite3_trace@12
     sqlite3_trace_v2=_sqlite3_trace_v2@16
-    sqlite3_transfer_bindings=_sqlite3_transfer_bindings@8
     sqlite3_update_hook=_sqlite3_update_hook@12
     sqlite3_uri_boolean=_sqlite3_uri_boolean@12
     sqlite3_uri_int64=_sqlite3_uri_int64@16

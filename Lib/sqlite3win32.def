@@ -73,6 +73,7 @@ EXPORTS
     sqlite3_create_function_v2=_sqlite3_create_function_v2@36
     sqlite3_create_module=_sqlite3_create_module@16
     sqlite3_create_module_v2=_sqlite3_create_module_v2@20
+    sqlite3_create_window_function=_sqlite3_create_window_function@40
     sqlite3_data_count=_sqlite3_data_count@4
     sqlite3_db_cacheflush=_sqlite3_db_cacheflush@4
     sqlite3_db_filename=_sqlite3_db_filename@8
@@ -82,6 +83,8 @@ EXPORTS
     sqlite3_db_release_memory=_sqlite3_db_release_memory@4
     sqlite3_db_status=_sqlite3_db_status@20
     sqlite3_declare_vtab=_sqlite3_declare_vtab@8
+    sqlite3_deserialize=_sqlite3_deserialize@32
+    sqlite3_drop_modules=_sqlite3_drop_modules@8
     sqlite3_enable_load_extension=_sqlite3_enable_load_extension@8
     sqlite3_enable_shared_cache=_sqlite3_enable_shared_cache@4
     sqlite3_errcode=_sqlite3_errcode@4
@@ -94,6 +97,9 @@ EXPORTS
     sqlite3_extended_errcode=_sqlite3_extended_errcode@4
     sqlite3_extended_result_codes=_sqlite3_extended_result_codes@8
     sqlite3_file_control=_sqlite3_file_control@16
+    sqlite3_filename_database=_sqlite3_filename_database@4
+    sqlite3_filename_journal=_sqlite3_filename_journal@4
+    sqlite3_filename_wal=_sqlite3_filename_wal@4
     sqlite3_finalize=_sqlite3_finalize@4
     sqlite3_free=_sqlite3_free@4
     sqlite3_free_table=_sqlite3_free_table@4
@@ -101,6 +107,7 @@ EXPORTS
     sqlite3_get_auxdata=_sqlite3_get_auxdata@8
     sqlite3_get_table=_sqlite3_get_table@24
     sqlite3_global_recover=_sqlite3_global_recover@0
+    sqlite3_hard_heap_limit64=_sqlite3_hard_heap_limit64@8
     sqlite3_initialize=_sqlite3_initialize@0
     sqlite3_interrupt=_sqlite3_interrupt@4
     sqlite3_keyword_check=_sqlite3_keyword_check@8
@@ -123,6 +130,7 @@ EXPORTS
     sqlite3_mutex_leave=_sqlite3_mutex_leave@4
     sqlite3_mutex_try=_sqlite3_mutex_try@4
     sqlite3_next_stmt=_sqlite3_next_stmt@8
+    sqlite3_normalized_sql=_sqlite3_normalized_sql@4
     sqlite3_open16=_sqlite3_open16@8
     sqlite3_open=_sqlite3_open@8
     sqlite3_open_v2=_sqlite3_open_v2@16
@@ -165,6 +173,7 @@ EXPORTS
     sqlite3_result_zeroblob64=_sqlite3_result_zeroblob64@12
     sqlite3_result_zeroblob=_sqlite3_result_zeroblob@8
     sqlite3_rollback_hook=_sqlite3_rollback_hook@12
+    sqlite3_serialize=_sqlite3_serialize@16
     sqlite3_rtree_geometry_callback=_sqlite3_rtree_geometry_callback@16
     sqlite3_rtree_query_callback=_sqlite3_rtree_query_callback@20
     sqlite3_set_authorizer=_sqlite3_set_authorizer@12
@@ -190,6 +199,7 @@ EXPORTS
     sqlite3_status=_sqlite3_status@16
     sqlite3_step=_sqlite3_step@4
     sqlite3_stmt_busy=_sqlite3_stmt_busy@4
+    sqlite3_stmt_isexplain=_sqlite3_stmt_isexplain@4
     sqlite3_stmt_readonly=_sqlite3_stmt_readonly@4
     sqlite3_stmt_status=_sqlite3_stmt_status@12
     sqlite3_strglob=_sqlite3_strglob@8
@@ -207,6 +217,7 @@ EXPORTS
     sqlite3_update_hook=_sqlite3_update_hook@12
     sqlite3_uri_boolean=_sqlite3_uri_boolean@12
     sqlite3_uri_int64=_sqlite3_uri_int64@16
+    sqlite3_uri_key=_sqlite3_uri_key@8
     sqlite3_uri_parameter=_sqlite3_uri_parameter@8
     sqlite3_user_data=_sqlite3_user_data@4
     sqlite3_value_blob=_sqlite3_value_blob@4
@@ -215,6 +226,7 @@ EXPORTS
     sqlite3_value_double=_sqlite3_value_double@4
     sqlite3_value_dup=_sqlite3_value_dup@4
     sqlite3_value_free=_sqlite3_value_free@4
+    sqlite3_value_frombind=_sqlite3_value_frombind@4
     sqlite3_value_int64=_sqlite3_value_int64@4
     sqlite3_value_int=_sqlite3_value_int@4
     sqlite3_value_pointer=_sqlite3_value_pointer@8

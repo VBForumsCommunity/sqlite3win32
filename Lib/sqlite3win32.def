@@ -67,12 +67,14 @@ EXPORTS
     sqlite3_create_collation16=_sqlite3_create_collation16@20
     sqlite3_create_collation=_sqlite3_create_collation@20
     sqlite3_create_collation_v2=_sqlite3_create_collation_v2@24
+    sqlite3_create_filename=_sqlite3_create_filename@20
     sqlite3_create_function16=_sqlite3_create_function16@32
     sqlite3_create_function=_sqlite3_create_function@32
     sqlite3_create_function_v2=_sqlite3_create_function_v2@36
     sqlite3_create_module=_sqlite3_create_module@16
     sqlite3_create_module_v2=_sqlite3_create_module_v2@20
     sqlite3_create_window_function=_sqlite3_create_window_function@40
+    sqlite3_database_file_object=_sqlite3_database_file_object@4
     sqlite3_data_count=_sqlite3_data_count@4
     sqlite3_db_cacheflush=_sqlite3_db_cacheflush@4
     sqlite3_db_filename=_sqlite3_db_filename@8
@@ -100,6 +102,7 @@ EXPORTS
     sqlite3_filename_wal=_sqlite3_filename_wal@4
     sqlite3_finalize=_sqlite3_finalize@4
     sqlite3_free=_sqlite3_free@4
+    sqlite3_free_filename=_sqlite3_free_filename@4
     sqlite3_free_table=_sqlite3_free_table@4
     sqlite3_get_autocommit=_sqlite3_get_autocommit@4
     sqlite3_get_auxdata=_sqlite3_get_auxdata@8
@@ -206,6 +209,7 @@ EXPORTS
     sqlite3_threadsafe=_sqlite3_threadsafe@0
     sqlite3_total_changes=_sqlite3_total_changes@4
     sqlite3_trace_v2=_sqlite3_trace_v2@16
+    sqlite3_txn_state=_sqlite3_txn_state@8
     sqlite3_update_hook=_sqlite3_update_hook@12
     sqlite3_uri_boolean=_sqlite3_uri_boolean@12
     sqlite3_uri_int64=_sqlite3_uri_int64@16

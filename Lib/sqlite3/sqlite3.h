@@ -3267,7 +3267,7 @@ SQLITE_API int SQLITE_STDCALL sqlite3_trace_v2(
 ** database connections for the meaning of "modify" in this paragraph.
 **
 */
-SQLITE_API void SQLITE_STDCALL sqlite3_progress_handler(sqlite3*, int, int(*)(void*), void*);
+SQLITE_API void SQLITE_STDCALL sqlite3_progress_handler(sqlite3*, int, int(SQLITE_STDCALL *)(void*), void*);
 
 /*
 ** CAPI3REF: Opening A New Database Connection

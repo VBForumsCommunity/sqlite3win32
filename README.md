@@ -12,3 +12,4 @@ What is the same:
 
 The following callback functions are __stdcall:
 - xProgress (or lpfnProgress) in sqlite3_progress_handler.
+- sqlite3_callback (or lpfnCallback) in sqlite3_exec.

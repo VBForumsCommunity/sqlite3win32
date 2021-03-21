@@ -11,4 +11,4 @@ What is the same:
 - __stdcall convention applied in each exported function so that it can be easily used by VB6/VBA.
 
 Following callback functions are (yet) __stdcall:
-- xProgress in sqlite3_progress_handler
+- xProgress (or lpfnProgress) in sqlite3_progress_handler

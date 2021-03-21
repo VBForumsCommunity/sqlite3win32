@@ -10,6 +10,6 @@ The fork of this has the following differences:
 What is the same:
 - __stdcall convention applied in each exported function so that it can be easily used by VB6/VBA.
 
-The following callback functions are __stdcall:
-- xProgress (or lpfnProgress) in sqlite3_progress_handler.
+The following callback functions are _stdcall:
 - sqlite3_callback (or lpfnCallback) in sqlite3_exec.
+- xProgress (or lpfnProgress) in sqlite3_progress_handler.

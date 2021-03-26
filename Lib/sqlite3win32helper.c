@@ -39,3 +39,6 @@
 #define SQLITE_DQS 0
 
 #include "sqlite3\sqlite3.c"
+#if defined(SQLITE_CORE)
+#include "sqlite3\regexp.c"
+#endif

@@ -33,7 +33,7 @@ static void concat_sql_func(
   all[lenall] = '\0';
   for(i = 0; i < argc - 1; i++)
   {
-	memcpy(all + lencurrent, sqlite3_value_text(argv[i]), lens[i]);
+    memcpy(all + lencurrent, sqlite3_value_text(argv[i]), lens[i]);
     lencurrent += lens[i];
   }
   memcpy(all + lencurrent, sqlite3_value_text(argv[argc - 1]), lens[argc - 1]);

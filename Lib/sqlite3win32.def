@@ -255,6 +255,7 @@ EXPORTS
     sqlite3_win32_utf8_to_mbcs=_sqlite3_win32_utf8_to_mbcs@4
     sqlite3_win32_write_debug=_sqlite3_win32_write_debug@8
     sqlite3_regexp_init=_sqlite3_regexp_init@12
+    sqlite3_concat_init=_sqlite3_concat_init@12
     cdecl_sqlite3_config=sqlite3_config
     cdecl_sqlite3_data_directory=sqlite3_data_directory
     cdecl_sqlite3_db_config=sqlite3_db_config

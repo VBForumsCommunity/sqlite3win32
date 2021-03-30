@@ -7,6 +7,8 @@ The fork of this has the following differences:
 - Win32 flags (SQLITE_WIN32_MALLOC, SQLITE_WIN32_HEAP_CREATE) are used in the c++ sources.
 - Statically linking to the regexp c extension to enable the REGEXP operator. Use the exported function sqlite3_regexp_init() for registering it.
   Example: "rc = sqlite3_regexp_init(hDB, 0, 0)" (pass zero in the second and third parameter as not used)
+- Statically linking to the concat c extension to enable the CONCAT() function. Use the exported function sqlite3_concat_init() for registering it.
+  Just a convenience function as it will produce the same output as the sqlite concatenate operator ||.
 - Renamings in the c++ sources.
 
 What is the same:

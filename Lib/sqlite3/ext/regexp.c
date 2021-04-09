@@ -156,7 +156,7 @@ static unsigned re_next_char(ReInput *p){
            && (p->z[p->i+1]&0xc0)==0x80 ){
       c = (c&0x0f)<<12 | ((p->z[p->i]&0x3f)<<6) | (p->z[p->i+1]&0x3f);
       p->i += 2;
-      if( c<=0x3ff || (c>=0xd800 && c<=0xdfff) ) c = 0xfffd;
+      if( c<=0x7ff || (c>=0xd800 && c<=0xdfff) ) c = 0xfffd;
     }else if( (c&0xf8)==0xf0 && p->i+3<p->mx && (p->z[p->i]&0xc0)==0x80
            && (p->z[p->i+1]&0xc0)==0x80 && (p->z[p->i+2]&0xc0)==0x80 ){
       c = (c&0x07)<<18 | ((p->z[p->i]&0x3f)<<12) | ((p->z[p->i+1]&0x3f)<<6)
@@ -225,7 +225,7 @@ static int re_match(ReCompiled *pRe, const unsigned char *zIn, int nIn){
     pToFree = 0;
     aStateSet[0].aState = aSpace;
   }else{
-    pToFree = sqlite3_malloc( sizeof(ReStateNumber)*2*pRe->nState );
+    pToFree = sqlite3_malloc64( sizeof(ReStateNumber)*2*pRe->nState );
     if( pToFree==0 ) return -1;
     aStateSet[0].aState = pToFree;
   }
@@ -337,10 +337,10 @@ re_match_end:
 static int re_resize(ReCompiled *p, int N){
   char *aOp;
   int *aArg;
-  aOp = sqlite3_realloc(p->aOp, N*sizeof(p->aOp[0]));
+  aOp = sqlite3_realloc64(p->aOp, N*sizeof(p->aOp[0]));
   if( aOp==0 ) return 1;
   p->aOp = aOp;
-  aArg = sqlite3_realloc(p->aArg, N*sizeof(p->aArg[0]));
+  aArg = sqlite3_realloc64(p->aArg, N*sizeof(p->aArg[0]));
   if( aArg==0 ) return 1;
   p->aArg = aArg;
   p->nAlloc = N;
@@ -610,7 +610,7 @@ static const char *re_subcompile_string(ReCompiled *p){
 ** regular expression.  Applications should invoke this routine once
 ** for every call to re_compile() to avoid memory leaks.
 */
-void re_free(ReCompiled *pRe){
+static void re_free(ReCompiled *pRe){
   if( pRe ){
     sqlite3_free(pRe->aOp);
     sqlite3_free(pRe->aArg);
@@ -624,7 +624,7 @@ void re_free(ReCompiled *pRe){
 ** compiled regular expression in *ppRe.  Return NULL on success or an
 ** error message if something goes wrong.
 */
-const char *re_compile(ReCompiled **ppRe, const char *zIn, int noCase){
+static const char *re_compile(ReCompiled **ppRe, const char *zIn, int noCase){
   ReCompiled *pRe;
   const char *zErr;
   int i, j;
@@ -755,7 +755,6 @@ SQLITE_API int SQLITE_STDCALL sqlite3_regexp_init(
   int rc = SQLITE_OK;
   (void)pzErrMsg;  /* Unused parameter */
   SQLITE_EXTENSION_INIT2(pApi);
-  rc = sqlite3_create_function(db, "regexp", 2, SQLITE_UTF8|SQLITE_DETERMINISTIC|SQLITE_INNOCUOUS, 0,
-                                 re_sql_func, 0, 0);
+  rc = sqlite3_create_function(db, "regexp", 2, SQLITE_UTF8|SQLITE_DETERMINISTIC|SQLITE_INNOCUOUS, 0, re_sql_func, 0, 0);
   return rc;
 }

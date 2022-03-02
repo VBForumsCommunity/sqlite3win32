@@ -1,6 +1,7 @@
 EXPORTS
     sqlite3_aggregate_context=_sqlite3_aggregate_context@8
     sqlite3_auto_extension=_sqlite3_auto_extension@4
+    sqlite3_autovacuum_pages=_sqlite3_autovacuum_pages@16
     sqlite3_backup_finish=_sqlite3_backup_finish@4
     sqlite3_backup_init=_sqlite3_backup_init@16
     sqlite3_backup_pagecount=_sqlite3_backup_pagecount@4
@@ -32,6 +33,7 @@ EXPORTS
     sqlite3_busy_timeout=_sqlite3_busy_timeout@8
     sqlite3_cancel_auto_extension=_sqlite3_cancel_auto_extension@4
     sqlite3_changes=_sqlite3_changes@4
+    sqlite3_changes64=_sqlite3_changes64@4
     sqlite3_clear_bindings=_sqlite3_clear_bindings@4
     sqlite3_close=_sqlite3_close@4
     sqlite3_close_v2=_sqlite3_close_v2@4
@@ -185,7 +187,6 @@ EXPORTS
     sqlite3_sql=_sqlite3_sql@4
     sqlite3_str_new=_sqlite3_str_new@4
     sqlite3_str_finish=_sqlite3_str_finish@4
-    sqlite3_str_vappendf=_sqlite3_str_vappendf@12
     sqlite3_str_append=_sqlite3_str_append@12
     sqlite3_str_appendall=_sqlite3_str_appendall@8
     sqlite3_str_appendchar=_sqlite3_str_appendchar@12
@@ -208,6 +209,7 @@ EXPORTS
     sqlite3_table_column_metadata=_sqlite3_table_column_metadata@36
     sqlite3_threadsafe=_sqlite3_threadsafe@0
     sqlite3_total_changes=_sqlite3_total_changes@4
+    sqlite3_total_changes64=_sqlite3_total_changes64@4
     sqlite3_trace_v2=_sqlite3_trace_v2@16
     sqlite3_txn_state=_sqlite3_txn_state@8
     sqlite3_update_hook=_sqlite3_update_hook@12
@@ -237,8 +239,6 @@ EXPORTS
     sqlite3_vfs_find=_sqlite3_vfs_find@4
     sqlite3_vfs_register=_sqlite3_vfs_register@8
     sqlite3_vfs_unregister=_sqlite3_vfs_unregister@4
-    sqlite3_vmprintf=_sqlite3_vmprintf@8
-    sqlite3_vsnprintf=_sqlite3_vsnprintf@16
     sqlite3_vtab_collation=_sqlite3_vtab_collation@8
     sqlite3_vtab_nochange=_sqlite3_vtab_nochange@4
     sqlite3_vtab_on_conflict=_sqlite3_vtab_on_conflict@4
@@ -265,5 +265,8 @@ EXPORTS
     cdecl_sqlite3_temp_directory=sqlite3_temp_directory
     cdecl_sqlite3_test_control=sqlite3_test_control
     cdecl_sqlite3_version=sqlite3_version
+    cdecl_sqlite3_vmprintf=sqlite3_vmprintf
+    cdecl_sqlite3_vsnprintf=sqlite3_vsnprintf
     cdecl_sqlite3_vtab_config=sqlite3_vtab_config
     cdecl_sqlite3_str_appendf=sqlite3_str_appendf
+    cdecl_sqlite3_str_vappendf=sqlite3_str_vappendf

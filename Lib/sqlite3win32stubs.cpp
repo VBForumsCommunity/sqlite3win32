@@ -12,8 +12,9 @@
 #define SQLITE_ENABLE_RTREE 1
 #define SQLITE_ENABLE_UNLOCK_NOTIFY 1
 #define SQLITE_ENABLE_COLUMN_METADATA 1
-#define SQLITE_ENABLE_DESERIALIZE 1
+// #define SQLITE_ENABLE_DESERIALIZE 1
 #define SQLITE_ENABLE_NORMALIZE 1
+#define SQLITE_ENABLE_MATH_FUNCTIONS 1
 #define SQLITE_DQS 0
 
 #include <windows.h>
@@ -36,6 +37,7 @@ class MODULE
 {
     DECLFUNC(aggregate_context)
     DECLFUNC(auto_extension)
+    DECLFUNC(autovacuum_pages)
     DECLFUNC(backup_finish)
     DECLFUNC(backup_init)
     DECLFUNC(backup_pagecount)
@@ -67,6 +69,7 @@ class MODULE
     DECLFUNC(busy_timeout)
     DECLFUNC(cancel_auto_extension)
     DECLFUNC(changes)
+    DECLFUNC(changes64)
     DECLFUNC(clear_bindings)
     DECLFUNC(close)
     DECLFUNC(close_v2)
@@ -220,7 +223,6 @@ class MODULE
     DECLFUNC(sql)
     DECLFUNC(str_new)
     DECLFUNC(str_finish)
-    DECLFUNC(str_vappendf)
     DECLFUNC(str_append)
     DECLFUNC(str_appendall)
     DECLFUNC(str_appendchar)
@@ -243,6 +245,7 @@ class MODULE
     DECLFUNC(table_column_metadata)
     DECLFUNC(threadsafe)
     DECLFUNC(total_changes)
+    DECLFUNC(total_changes64)
     DECLFUNC(trace_v2)
     DECLFUNC(txn_state)
     DECLFUNC(update_hook)
@@ -272,8 +275,6 @@ class MODULE
     DECLFUNC(vfs_find)
     DECLFUNC(vfs_register)
     DECLFUNC(vfs_unregister)
-    DECLFUNC(vmprintf)
-    DECLFUNC(vsnprintf)
     DECLFUNC(vtab_collation)
     DECLFUNC(vtab_nochange)
     DECLFUNC(vtab_on_conflict)
@@ -295,6 +296,7 @@ class MODULE
 
 DEFFUNC(aggregate_context)
 DEFFUNC(auto_extension)
+DEFFUNC(autovacuum_pages)
 DEFFUNC(backup_finish)
 DEFFUNC(backup_init)
 DEFFUNC(backup_pagecount)
@@ -326,6 +328,7 @@ DEFFUNC(busy_handler)
 DEFFUNC(busy_timeout)
 DEFFUNC(cancel_auto_extension)
 DEFFUNC(changes)
+DEFFUNC(changes64)
 DEFFUNC(clear_bindings)
 DEFFUNC(close)
 DEFFUNC(close_v2)
@@ -479,7 +482,6 @@ DEFFUNC(sourceid)
 DEFFUNC(sql)
 DEFFUNC(str_new)
 DEFFUNC(str_finish)
-DEFFUNC(str_vappendf)
 DEFFUNC(str_append)
 DEFFUNC(str_appendall)
 DEFFUNC(str_appendchar)
@@ -502,6 +504,7 @@ DEFFUNC(system_errno)
 DEFFUNC(table_column_metadata)
 DEFFUNC(threadsafe)
 DEFFUNC(total_changes)
+DEFFUNC(total_changes64)
 DEFFUNC(trace_v2)
 DEFFUNC(txn_state)
 DEFFUNC(update_hook)
@@ -531,8 +534,6 @@ DEFFUNC(value_type)
 DEFFUNC(vfs_find)
 DEFFUNC(vfs_register)
 DEFFUNC(vfs_unregister)
-DEFFUNC(vmprintf)
-DEFFUNC(vsnprintf)
 DEFFUNC(vtab_collation)
 DEFFUNC(vtab_nochange)
 DEFFUNC(vtab_on_conflict)

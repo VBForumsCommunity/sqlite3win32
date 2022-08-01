@@ -19,12 +19,15 @@
 // # pragma warning (disable : 4706)  // assignment within conditional expression
 // # pragma warning (disable : 4756)  // overflow in constant arithmetic
 # pragma warning (disable : 4761)  // integral size mismatch in argument; conversion supplied
+# pragma warning (disable : 4229)  // anachronism used: modifiers on data are ignored
 
 #define SQLITE_API
 #define SQLITE_STDCALL __stdcall
+#define SQLITE_CDECL __cdecl
 #define SQLITE_WIN32_MALLOC 1
 #define SQLITE_WIN32_HEAP_CREATE 1
 #define SQLITE_THREADSAFE 1
+#define SQLITE_DEFAULT_CACHE_SIZE 8192
 // #define SQLITE_USE_URI 1
 #define SQLITE_SOUNDEX 1
 #define SQLITE_OMIT_DEPRECATED 1

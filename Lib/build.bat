@@ -1,6 +1,6 @@
 @echo off
 setlocal
-set cl_exe="C:\Programme\Microsoft Visual Studio 6.0\VC98\Bin\cl.exe" /nologo /MD
+set cl_exe="C:\Programme\Microsoft Visual Studio 6.0\VC98\Bin\cl.exe" /nologo /MD /Ot
 set bin_dir=..\Bin
 
 pushd %~dp0

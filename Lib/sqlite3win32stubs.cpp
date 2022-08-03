@@ -1,4 +1,5 @@
 # pragma warning (disable : 4229)  // anachronism used: modifiers on data are ignored
+# pragma warning (disable : 4005)  // macro redefinition
 
 #define SQLITE_API extern "C"
 #define SQLITE_STDCALL __stdcall

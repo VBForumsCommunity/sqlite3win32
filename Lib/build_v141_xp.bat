@@ -1,7 +1,14 @@
 @echo off
 setlocal
-set cl_exe="C:\Program Files (x86)\Microsoft Visual Studio\VC98\Bin\cl.exe" /nologo /MD /Ot
+set cl_exe="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe" /nologo /MT /Ot /Gz
+:: /arch:IA32
+
 set bin_dir=..\Bin
+
+call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\vcvars32.bat"
+
+set "include=C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\include;%include%"
+set "lib=C:\Program Files (x86)\Microsoft SDKs\Windows\v7.1A\lib;%lib%"
 
 pushd %~dp0
 

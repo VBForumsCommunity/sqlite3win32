@@ -20,6 +20,7 @@
 // # pragma warning (disable : 4756)  // overflow in constant arithmetic
 # pragma warning (disable : 4761)  // integral size mismatch in argument; conversion supplied
 # pragma warning (disable : 4229)  // anachronism used: modifiers on data are ignored
+# pragma warning (disable : 4005)  // macro redefinition
 
 #define SQLITE_API
 #define SQLITE_STDCALL __stdcall

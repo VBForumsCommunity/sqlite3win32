@@ -1,6 +1,6 @@
 @echo off
 setlocal
-set cl_exe="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe" /nologo /MT /Ot /Gz
+set cl_exe="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe" /nologo /MT /O2 /Gz
 :: /arch:IA32
 
 set bin_dir=..\Bin

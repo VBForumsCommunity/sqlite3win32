@@ -82,6 +82,7 @@ EXPORTS
     sqlite3_db_filename=_sqlite3_db_filename@8
     sqlite3_db_handle=_sqlite3_db_handle@4
     sqlite3_db_mutex=_sqlite3_db_mutex@4
+    sqlite3_db_name=_sqlite3_db_name@8
     sqlite3_db_readonly=_sqlite3_db_readonly@8
     sqlite3_db_release_memory=_sqlite3_db_release_memory@4
     sqlite3_db_status=_sqlite3_db_status@20
@@ -93,6 +94,7 @@ EXPORTS
     sqlite3_errcode=_sqlite3_errcode@4
     sqlite3_errmsg16=_sqlite3_errmsg16@4
     sqlite3_errmsg=_sqlite3_errmsg@4
+    sqlite3_error_offset=_sqlite3_error_offset@4
     sqlite3_errstr=_sqlite3_errstr@4
     sqlite3_exec=_sqlite3_exec@20
     sqlite3_expanded_sql=_sqlite3_expanded_sql@4
@@ -240,8 +242,13 @@ EXPORTS
     sqlite3_vfs_register=_sqlite3_vfs_register@8
     sqlite3_vfs_unregister=_sqlite3_vfs_unregister@4
     sqlite3_vtab_collation=_sqlite3_vtab_collation@8
+    sqlite3_vtab_distinct=_sqlite3_vtab_distinct@4
+    sqlite3_vtab_in=_sqlite3_vtab_in@12
+    sqlite3_vtab_in_first=_sqlite3_vtab_in_first@8
+    sqlite3_vtab_in_next=_sqlite3_vtab_in_next@8
     sqlite3_vtab_nochange=_sqlite3_vtab_nochange@4
     sqlite3_vtab_on_conflict=_sqlite3_vtab_on_conflict@4
+    sqlite3_vtab_rhs_value=_sqlite3_vtab_rhs_value@12
     sqlite3_wal_autocheckpoint=_sqlite3_wal_autocheckpoint@8
     sqlite3_wal_checkpoint=_sqlite3_wal_checkpoint@8
     sqlite3_wal_checkpoint_v2=_sqlite3_wal_checkpoint_v2@20

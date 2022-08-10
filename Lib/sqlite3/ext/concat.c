@@ -104,7 +104,7 @@ static void concat_ws_sql_func(
 #ifdef _WIN32
 __declspec(dllexport)
 #endif
-SQLITE_API int SQLITE_STDCALL sqlite3_concat_init(
+SQLITE_API int sqlite3_concat_init(
   sqlite3 *db, 
   char **pzErrMsg, 
   const sqlite3_api_routines *pApi

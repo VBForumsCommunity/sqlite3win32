@@ -762,7 +762,7 @@ static void re_sql_func(
   if( pRe==0 ){
     zPattern = (const char*)sqlite3_value_text(argv[0]);
     if( zPattern==0 ) return;
-    zErr = re_compile(&pRe, zPattern, sqlite3_user_data(context)!=0);
+    zErr = re_compile(&pRe, zPattern, 0);
     if( zErr ){
       re_free(pRe);
       sqlite3_result_error(context, zErr, -1);
@@ -806,7 +806,7 @@ static void re_bytecode_func(
 
   zPattern = (const char*)sqlite3_value_text(argv[0]);
   if( zPattern==0 ) return;
-  zErr = re_compile(&pRe, zPattern, sqlite3_user_data(context)!=0);
+  zErr = re_compile(&pRe, zPattern, 0);
   if( zErr ){
     re_free(pRe);
     sqlite3_result_error(context, zErr, -1);
@@ -858,23 +858,14 @@ SQLITE_API int sqlite3_regexp_init(
 ){
   int rc = SQLITE_OK;
   SQLITE_EXTENSION_INIT2(pApi);
-  (void)pzErrMsg;  /* Unused */
-  rc = sqlite3_create_function(db, "regexp", 2, 
-                            SQLITE_UTF8|SQLITE_INNOCUOUS|SQLITE_DETERMINISTIC,
-                            0, re_sql_func, 0, 0);
-  if( rc==SQLITE_OK ){
-    /* The regexpi(PATTERN,STRING) function is a case-insensitive version
-    ** of regexp(PATTERN,STRING). */
-    rc = sqlite3_create_function(db, "regexpi", 2,
-                            SQLITE_UTF8|SQLITE_INNOCUOUS|SQLITE_DETERMINISTIC,
-                            (void*)db, re_sql_func, 0, 0);
+  (void)pzErrMsg;  /* Unused parameter */
+  rc = sqlite3_create_function(db, "regexp", 2, SQLITE_UTF8|SQLITE_DETERMINISTIC|SQLITE_INNOCUOUS, 0, re_sql_func, 0, 0);
+
 #if defined(SQLITE_DEBUG)
     if( rc==SQLITE_OK ){
-      rc = sqlite3_create_function(db, "regexp_bytecode", 1,
-                            SQLITE_UTF8|SQLITE_INNOCUOUS|SQLITE_DETERMINISTIC,
-                            0, re_bytecode_func, 0, 0);
+      rc = sqlite3_create_function(db, "regexp_bytecode", 1, SQLITE_UTF8|SQLITE_DETERMINISTIC|SQLITE_INNOCUOUS, 0, re_bytecode_func, 0, 0);
     }
 #endif /* SQLITE_DEBUG */
-  }
+
   return rc;
 }

@@ -43,6 +43,7 @@
 #define SQLITE_ENABLE_NORMALIZE 1
 #define SQLITE_ENABLE_MATH_FUNCTIONS 1
 #define SQLITE_DQS 0
+#define HAVE_LOG2 0
 
 #include "sqlite3\sqlite3.c"
 #if defined(SQLITE_CORE)

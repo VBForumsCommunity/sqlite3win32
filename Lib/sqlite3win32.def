@@ -114,6 +114,7 @@ EXPORTS
     sqlite3_hard_heap_limit64=_sqlite3_hard_heap_limit64@8
     sqlite3_initialize=_sqlite3_initialize@0
     sqlite3_interrupt=_sqlite3_interrupt@4
+    sqlite3_is_interrupted=_sqlite3_is_interrupted@4
     sqlite3_keyword_check=_sqlite3_keyword_check@8
     sqlite3_keyword_count=_sqlite3_keyword_count@0
     sqlite3_keyword_name=_sqlite3_keyword_name@12
@@ -210,8 +211,8 @@ EXPORTS
     sqlite3_system_errno=_sqlite3_system_errno@4
     sqlite3_table_column_metadata=_sqlite3_table_column_metadata@36
     sqlite3_threadsafe=_sqlite3_threadsafe@0
-    sqlite3_total_changes=_sqlite3_total_changes@4
     sqlite3_total_changes64=_sqlite3_total_changes64@4
+    sqlite3_total_changes=_sqlite3_total_changes@4
     sqlite3_trace_v2=_sqlite3_trace_v2@16
     sqlite3_txn_state=_sqlite3_txn_state@8
     sqlite3_update_hook=_sqlite3_update_hook@12
@@ -225,6 +226,7 @@ EXPORTS
     sqlite3_value_bytes=_sqlite3_value_bytes@4
     sqlite3_value_double=_sqlite3_value_double@4
     sqlite3_value_dup=_sqlite3_value_dup@4
+    sqlite3_value_encoding=_sqlite3_value_encoding@4
     sqlite3_value_free=_sqlite3_value_free@4
     sqlite3_value_frombind=_sqlite3_value_frombind@4
     sqlite3_value_int64=_sqlite3_value_int64@4

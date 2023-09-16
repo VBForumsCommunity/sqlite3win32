@@ -201,6 +201,7 @@ EXPORTS
     sqlite3_status=_sqlite3_status@16
     sqlite3_step=_sqlite3_step@4
     sqlite3_stmt_busy=_sqlite3_stmt_busy@4
+    sqlite3_stmt_explain=_sqlite3_stmt_explain@8
     sqlite3_stmt_isexplain=_sqlite3_stmt_isexplain@4
     sqlite3_stmt_readonly=_sqlite3_stmt_readonly@4
     sqlite3_stmt_status=_sqlite3_stmt_status@12

@@ -48,5 +48,4 @@
 #include "sqlite3\sqlite3.c"
 #if defined(SQLITE_CORE)
 #include "sqlite3\ext\regexp.c"
-#include "sqlite3\ext\concat.c"
 #endif

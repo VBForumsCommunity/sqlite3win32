@@ -33,7 +33,6 @@ SQLITE_API char *SQLITE_STDCALL sqlite3_win32_utf8_to_mbcs(const char *zFilename
 SQLITE_API char *SQLITE_STDCALL sqlite3_win32_mbcs_to_utf8(const char *zFilename);
 SQLITE_API void SQLITE_STDCALL sqlite3_win32_write_debug(const char *zBuf, int nBuf);
 SQLITE_API void SQLITE_STDCALL sqlite3_regexp_init(sqlite3 *db, char **pzErrMsg, const sqlite3_api_routines *pApi);
-SQLITE_API void SQLITE_STDCALL sqlite3_concat_init(sqlite3 *db, char **pzErrMsg, const sqlite3_api_routines *pApi);
 
 #define MODULE sqlite3win32stubs
 
@@ -153,6 +152,7 @@ class MODULE
     DECLFUNC(free_table)
     DECLFUNC(get_autocommit)
     DECLFUNC(get_auxdata)
+    DECLFUNC(get_clientdata)
     DECLFUNC(get_table)
     DECLFUNC(hard_heap_limit64)
     DECLFUNC(initialize)
@@ -224,6 +224,7 @@ class MODULE
     DECLFUNC(rtree_query_callback)
     DECLFUNC(set_authorizer)
     DECLFUNC(set_auxdata)
+    DECLFUNC(set_clientdata)
     DECLFUNC(set_last_insert_rowid)
     DECLFUNC(shutdown)
     DECLFUNC(sleep)
@@ -308,7 +309,6 @@ class MODULE
     DECLFUNC(win32_utf8_to_mbcs)
     DECLFUNC(win32_write_debug)
     DECLFUNC(regexp_init)
-    DECLFUNC(concat_init)
 };
 
 DEFFUNC(aggregate_context)
@@ -422,6 +422,7 @@ DEFFUNC(free_filename)
 DEFFUNC(free_table)
 DEFFUNC(get_autocommit)
 DEFFUNC(get_auxdata)
+DEFFUNC(get_clientdata)
 DEFFUNC(get_table)
 DEFFUNC(hard_heap_limit64)
 DEFFUNC(initialize)
@@ -493,6 +494,7 @@ DEFFUNC(rtree_geometry_callback)
 DEFFUNC(rtree_query_callback)
 DEFFUNC(set_authorizer)
 DEFFUNC(set_auxdata)
+DEFFUNC(set_clientdata)
 DEFFUNC(set_last_insert_rowid)
 DEFFUNC(shutdown)
 DEFFUNC(sleep)
@@ -577,4 +579,3 @@ DEFFUNC(win32_sleep)
 DEFFUNC(win32_utf8_to_mbcs)
 DEFFUNC(win32_write_debug)
 DEFFUNC(regexp_init)
-DEFFUNC(concat_init)

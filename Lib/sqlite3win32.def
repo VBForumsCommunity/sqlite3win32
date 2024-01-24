@@ -110,6 +110,7 @@ EXPORTS
     sqlite3_free_table=_sqlite3_free_table@4
     sqlite3_get_autocommit=_sqlite3_get_autocommit@4
     sqlite3_get_auxdata=_sqlite3_get_auxdata@8
+    sqlite3_get_clientdata=_sqlite3_get_clientdata@8
     sqlite3_get_table=_sqlite3_get_table@24
     sqlite3_hard_heap_limit64=_sqlite3_hard_heap_limit64@8
     sqlite3_initialize=_sqlite3_initialize@0
@@ -181,6 +182,7 @@ EXPORTS
     sqlite3_rtree_query_callback=_sqlite3_rtree_query_callback@20
     sqlite3_set_authorizer=_sqlite3_set_authorizer@12
     sqlite3_set_auxdata=_sqlite3_set_auxdata@16
+    sqlite3_set_clientdata=_sqlite3_set_clientdata@16
     sqlite3_set_last_insert_rowid=_sqlite3_set_last_insert_rowid@12
     sqlite3_shutdown=_sqlite3_shutdown@0
     sqlite3_sleep=_sqlite3_sleep@4
@@ -265,7 +267,6 @@ EXPORTS
     sqlite3_win32_utf8_to_mbcs=_sqlite3_win32_utf8_to_mbcs@4
     sqlite3_win32_write_debug=_sqlite3_win32_write_debug@8
     sqlite3_regexp_init=_sqlite3_regexp_init@12
-    sqlite3_concat_init=_sqlite3_concat_init@12
     cdecl_sqlite3_config=sqlite3_config
     cdecl_sqlite3_data_directory=sqlite3_data_directory
     cdecl_sqlite3_db_config=sqlite3_db_config

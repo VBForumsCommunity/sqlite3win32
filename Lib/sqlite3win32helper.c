@@ -45,6 +45,10 @@
 #define SQLITE_DQS 0
 #define HAVE_LOG2 0
 
+#if defined(_MSC_VER) && _MSC_VER<1300
+typedef unsigned long ULONG_PTR;
+#endif
+
 #include "sqlite3\sqlite3.c"
 #if defined(SQLITE_CORE)
 #include "sqlite3\ext\regexp.c"

@@ -85,6 +85,7 @@ EXPORTS
     sqlite3_db_name=_sqlite3_db_name@8
     sqlite3_db_readonly=_sqlite3_db_readonly@8
     sqlite3_db_release_memory=_sqlite3_db_release_memory@4
+    sqlite3_db_status64=_sqlite3_db_status64@20
     sqlite3_db_status=_sqlite3_db_status@20
     sqlite3_declare_vtab=_sqlite3_declare_vtab@8
     sqlite3_deserialize=_sqlite3_deserialize@32
@@ -183,6 +184,7 @@ EXPORTS
     sqlite3_set_authorizer=_sqlite3_set_authorizer@12
     sqlite3_set_auxdata=_sqlite3_set_auxdata@16
     sqlite3_set_clientdata=_sqlite3_set_clientdata@16
+    sqlite3_set_errmsg=_sqlite3_set_errmsg@12
     sqlite3_set_last_insert_rowid=_sqlite3_set_last_insert_rowid@12
     sqlite3_setlk_timeout=_sqlite3_setlk_timeout@12
     sqlite3_shutdown=_sqlite3_shutdown@0

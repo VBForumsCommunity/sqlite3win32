@@ -27,6 +27,7 @@
 #include <windows.h>
 #include "sqlite3\sqlite3.h"
 
+SQLITE_API int SQLITE_STDCALL sqlite3_db_config_fp_digits(sqlite3 *db, int NewDigits, int* pOldDigits);
 SQLITE_API int SQLITE_STDCALL sqlite3_win32_is_nt(void);
 SQLITE_API void SQLITE_STDCALL sqlite3_win32_sleep(DWORD milliseconds);
 SQLITE_API char *SQLITE_STDCALL sqlite3_win32_utf8_to_mbcs(const char *zFilename);
@@ -121,6 +122,7 @@ class MODULE
     DECLFUNC(database_file_object)
     DECLFUNC(data_count)
     DECLFUNC(db_cacheflush)
+	DECLFUNC(db_config_fp_digits)
     DECLFUNC(db_filename)
     DECLFUNC(db_handle)
     DECLFUNC(db_mutex)
@@ -396,6 +398,7 @@ DEFFUNC(create_window_function)
 DEFFUNC(database_file_object)
 DEFFUNC(data_count)
 DEFFUNC(db_cacheflush)
+DEFFUNC(db_config_fp_digits)
 DEFFUNC(db_filename)
 DEFFUNC(db_handle)
 DEFFUNC(db_mutex)

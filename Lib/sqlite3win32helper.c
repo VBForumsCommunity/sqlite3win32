@@ -47,6 +47,11 @@
 
 #if defined(_MSC_VER) && _MSC_VER<1300
 typedef unsigned long ULONG_PTR;
+#include "sqlite3\stdint\stdint.h"
+#endif
+
+#ifndef INFINITY
+#define INFINITY HUGE_VAL
 #endif
 
 #include "sqlite3\sqlite3.c"

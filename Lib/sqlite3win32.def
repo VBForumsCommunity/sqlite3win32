@@ -195,10 +195,12 @@ EXPORTS
     sqlite3_sql=_sqlite3_sql@4
     sqlite3_str_new=_sqlite3_str_new@4
     sqlite3_str_finish=_sqlite3_str_finish@4
+    sqlite3_str_free=_sqlite3_str_free@4
     sqlite3_str_append=_sqlite3_str_append@12
     sqlite3_str_appendall=_sqlite3_str_appendall@8
     sqlite3_str_appendchar=_sqlite3_str_appendchar@12
     sqlite3_str_reset=_sqlite3_str_reset@4
+    sqlite3_str_truncate=_sqlite3_str_truncate@8
     sqlite3_str_errcode=_sqlite3_str_errcode@4
     sqlite3_str_length=_sqlite3_str_length@4
     sqlite3_str_value=_sqlite3_str_value@4

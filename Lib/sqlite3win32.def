@@ -191,7 +191,6 @@ EXPORTS
     sqlite3_shutdown=_sqlite3_shutdown@0
     sqlite3_sleep=_sqlite3_sleep@4
     sqlite3_soft_heap_limit64=_sqlite3_soft_heap_limit64@8
-    sqlite3_soft_heap_limit=_sqlite3_soft_heap_limit@4
     sqlite3_sourceid=_sqlite3_sourceid@0
     sqlite3_sql=_sqlite3_sql@4
     sqlite3_str_new=_sqlite3_str_new@4

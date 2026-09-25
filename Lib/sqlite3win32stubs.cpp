@@ -12,9 +12,11 @@
 #define SQLITE_SOUNDEX 1
 #define SQLITE_OMIT_DEPRECATED 1
 #define SQLITE_OMIT_AUTOINIT 1
+#define SQLITE_STRICT_SUBTYPE 1
 #define SQLITE_ENABLE_FTS3 1
 #define SQLITE_ENABLE_FTS3_PARENTHESIS 1
 #define SQLITE_ENABLE_FTS4 1
+#define SQLITE_ENABLE_FTS5 1
 #define SQLITE_ENABLE_RTREE 1
 #define SQLITE_ENABLE_UNLOCK_NOTIFY 1
 #define SQLITE_ENABLE_COLUMN_METADATA 1
@@ -234,7 +236,6 @@ class MODULE
     DECLFUNC(shutdown)
     DECLFUNC(sleep)
     DECLFUNC(soft_heap_limit64)
-    DECLFUNC(soft_heap_limit)
     DECLFUNC(sourceid)
     DECLFUNC(sql)
     DECLFUNC(str_new)
@@ -510,7 +511,6 @@ DEFFUNC(setlk_timeout)
 DEFFUNC(shutdown)
 DEFFUNC(sleep)
 DEFFUNC(soft_heap_limit64)
-DEFFUNC(soft_heap_limit)
 DEFFUNC(sourceid)
 DEFFUNC(sql)
 DEFFUNC(str_new)

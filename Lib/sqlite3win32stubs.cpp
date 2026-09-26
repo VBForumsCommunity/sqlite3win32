@@ -23,6 +23,7 @@
 // #define SQLITE_ENABLE_DESERIALIZE 1
 #define SQLITE_ENABLE_NORMALIZE 1
 #define SQLITE_ENABLE_MATH_FUNCTIONS 1
+#define SQLITE_ENABLE_CARRAY 1
 #define SQLITE_DQS 0
 #define HAVE_LOG2 0
 
@@ -77,6 +78,8 @@ class MODULE
     DECLFUNC(busy_handler)
     DECLFUNC(busy_timeout)
     DECLFUNC(cancel_auto_extension)
+    DECLFUNC(carray_bind)
+    DECLFUNC(carray_bind_v2)
     DECLFUNC(changes)
     DECLFUNC(changes64)
     DECLFUNC(clear_bindings)
@@ -352,6 +355,8 @@ DEFFUNC(blob_write)
 DEFFUNC(busy_handler)
 DEFFUNC(busy_timeout)
 DEFFUNC(cancel_auto_extension)
+DEFFUNC(carray_bind)
+DEFFUNC(carray_bind_v2)
 DEFFUNC(changes)
 DEFFUNC(changes64)
 DEFFUNC(clear_bindings)

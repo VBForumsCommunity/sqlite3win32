@@ -32,6 +32,8 @@ EXPORTS
     sqlite3_busy_handler=_sqlite3_busy_handler@12
     sqlite3_busy_timeout=_sqlite3_busy_timeout@8
     sqlite3_cancel_auto_extension=_sqlite3_cancel_auto_extension@4
+    sqlite3_carray_bind=_sqlite3_carray_bind@24
+    sqlite3_carray_bind_v2=_sqlite3_carray_bind_v2@28
     sqlite3_changes=_sqlite3_changes@4
     sqlite3_changes64=_sqlite3_changes64@4
     sqlite3_clear_bindings=_sqlite3_clear_bindings@4

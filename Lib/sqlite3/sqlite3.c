@@ -37213,10 +37213,10 @@ static double sqlite3Fp10Convert2(u64 d, int p){
 
 static double uint64_to_double(u64 u)
 {
-i64 s = (u & 0x7FFFFFFFFFFFFFFi64);
+i64 s = (i64)(u & 0x7fffffffffffffffi64);
 double dbl = (double)s;
 if (u & 0x8000000000000000i64)
-dbl += (double)0x8000000000000000i64;
+dbl += 9223372036854775808.0;
 return dbl;
 }
 

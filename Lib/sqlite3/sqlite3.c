@@ -37211,6 +37211,7 @@ static double sqlite3Fp10Convert2(u64 d, int p){
   return r;
 }
 
+#if defined(_MSC_VER) && _MSC_VER<1300
 static double uint64_to_double(u64 u)
 {
 i64 s = (i64)(u & 0x7fffffffffffffffi64);
@@ -37219,6 +37220,7 @@ if (u & 0x8000000000000000i64)
 dbl += 9223372036854775808.0;
 return dbl;
 }
+#endif
 
 /*
 ** The string z[] is an text representation of a real number.
@@ -216031,7 +216033,11 @@ static void jsonReturnFromBlob(
           ** large to appear as an SQLite integer so it must be converted
           ** into floating point. */
           double r;
+		  #if defined(_MSC_VER) && _MSC_VER<1300
 		  r = uint64_to_double(*(sqlite3_uint64*)&iRes);
+		  #else
+		  r = (double)*(sqlite3_uint64*)&iRes;
+		  #endif
           sqlite3_result_double(pCtx, bNeg ? -r : r);
         }else{
           sqlite3_result_int64(pCtx, bNeg ? -iRes : iRes);

@@ -893,9 +893,11 @@ static void re_bytecode_func(
 ** Invoke this routine to register the regexp() function with the
 ** SQLite database connection.
 */
+/*
 #ifdef _WIN32
 __declspec(dllexport)
 #endif
+*/
 SQLITE_API int sqlite3_regexp_init(
   sqlite3 *db, 
   char **pzErrMsg, 

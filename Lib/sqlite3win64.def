@@ -81,6 +81,7 @@ EXPORTS
     sqlite3_database_file_object=sqlite3_database_file_object
     sqlite3_data_count=sqlite3_data_count
     sqlite3_db_cacheflush=sqlite3_db_cacheflush
+    sqlite3_db_config_fp_digits=sqlite3_db_config_fp_digits
     sqlite3_db_filename=sqlite3_db_filename
     sqlite3_db_handle=sqlite3_db_handle
     sqlite3_db_mutex=sqlite3_db_mutex
@@ -272,6 +273,7 @@ EXPORTS
     sqlite3_win32_sleep=sqlite3_win32_sleep
     sqlite3_win32_utf8_to_mbcs=sqlite3_win32_utf8_to_mbcs
     sqlite3_win32_write_debug=sqlite3_win32_write_debug
+    sqlite3_regexp_init=sqlite3_regexp_init
     cdecl_sqlite3_config=sqlite3_config
     cdecl_sqlite3_db_config=sqlite3_db_config
     cdecl_sqlite3_log=sqlite3_log

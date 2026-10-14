@@ -65,9 +65,6 @@ typedef unsigned long ULONG_PTR;
 /*
 ** __stdcall wrapper functions for sqlite3_db_config
 */
-#ifdef _WIN32
-__declspec(dllexport)
-#endif
 SQLITE_API int sqlite3_db_config_fp_digits(sqlite3 *db, int NewDigits, int* pOldDigits) {
   return sqlite3_db_config(db, SQLITE_DBCONFIG_FP_DIGITS, NewDigits, pOldDigits);
 }

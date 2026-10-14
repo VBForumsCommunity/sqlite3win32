@@ -8,7 +8,7 @@ The fork of this has the following differences:
 - Statically linking to the regexp c extension to enable the REGEXP operator. Use the exported function sqlite3_regexp_init() for registering it.
   Example: "rc = sqlite3_regexp_init(hDB, 0, 0)" (pass zero in the second and third parameter as not used)
 - All callback functions are __stdcall. Even those used for the overloading of the SQL functions or aggregates.
-- sqlite3win64.dll
+- sqlite3win64.dll in addition.
 
 What is the same:
 - __stdcall convention applied in each exported function so that it can be easily used by VB6/VBA.
